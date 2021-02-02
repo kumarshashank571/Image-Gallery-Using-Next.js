@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { Box, Container, Text } from "@chakra-ui/react";
-export default function Home() {
+import {getCuratedPhotos} from "../lib/api"
+export default function Home({data}) {
+  console.log(data)
   return (
     <div>
       <Head>
@@ -24,4 +26,12 @@ export default function Home() {
 
     </div>
   );
+}
+export async function getServerSideProps() {
+  const data = await getCuratedPhotos();
+  return {
+    props: {
+      data,
+    },
+  };
 }
