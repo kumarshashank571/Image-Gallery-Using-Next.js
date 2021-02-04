@@ -1,5 +1,7 @@
 import Head from "next/head";
-import { Box, Container, Text } from "@chakra-ui/react";
+//import { Box, Container, Text } from "@chakra-ui/react";
+import { Box, Container, Text, Wrap, WrapItem } from "@chakra-ui/react";
+import Image from "next/image";
 import React, { useState } from "react";
 import {getCuratedPhotos} from "../lib/api"
 export default function Home({data}) {
@@ -23,11 +25,11 @@ export default function Home({data}) {
     NextJS Image Gallery
   </Text>
 </Container>
-{
-  photos.map((pic) => (
-    <img src={pic.src.original} width="500" height="500" />
-  ))
-}
+<Wrap px="1rem" spacing={4} justify="center">
+  {photos.map((pic) => (
+    <Image src={pic.src.portrait} height={600} width={400} alt={pic.url} />
+  ))}
+</Wrap>
 </Box>
 
     </div>
