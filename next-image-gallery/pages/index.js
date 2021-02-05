@@ -54,12 +54,12 @@ export default function Home({data}) {
     textDecoration="underline"
     fontSize={["4xl", "4xl", "5xl", "5xl"]}
   >
-    NextJS Image Gallery
+    Image Gallery
   </Text>
   <form onSubmit={handleSubmit}>
   <InputGroup pb="1rem">
     <Input
-      placeholder="Search for Apple"
+      placeholder="Search for Anything"
       variant="ghost"
       value={query}
       onChange={(e) => setQuery(e.target.value)}
