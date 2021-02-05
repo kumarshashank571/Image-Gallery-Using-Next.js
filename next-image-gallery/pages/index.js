@@ -1,5 +1,6 @@
 import Head from "next/head";
 //import { Box, Container, Text } from "@chakra-ui/react";
+import Link from "next/link"
 import {
   Box,
   Container,
@@ -89,7 +90,11 @@ export default function Home({data}) {
       lineHeight="0"
       _hover={{ boxShadow: "dark-lg" }}
     >
-      <Image src={pic.src.portrait} height={600} width={400} alt={pic.url} />
+      <Link href={`/photos/${pic.id}`}>
+  <a>
+    <Image src={pic.src.portrait} height={600} width={400} alt={pic.url} />
+  </a>
+</Link>
     </WrapItem>
   ))}
 </Wrap>
